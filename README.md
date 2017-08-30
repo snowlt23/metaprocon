@@ -26,7 +26,7 @@ debug_var(a, b, c, d); // L5: a=1 b=2 c=3 e=4
 
 Varargs min max
 ```cpp
-mmin(1, 2, 3, 4, 5)
-mmax(1, 2, 3, 4, 5)
+mmin(1, 2, 3, 4, 5);
+mmax(1, 2, 3, 4, 5);
 ```
 
