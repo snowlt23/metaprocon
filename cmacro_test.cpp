@@ -18,5 +18,6 @@ int main() {
   int b = 2;
   int c = 3;
   debug_var(a, b, c);
+  cout << mmin(6, 7, 8, 9) << ":" << mmax(6, 7, 8, 9) << endl;
 }
 
