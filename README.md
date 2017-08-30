@@ -1,6 +1,8 @@
 
 # Metaprocon
 
+*at your own risk*
+
 Metaprocon is metaprogramming library for Programming Contest.  
 *warning*: this library using preprocessor and template black dark magic power.
 
