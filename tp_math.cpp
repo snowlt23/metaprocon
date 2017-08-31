@@ -4,9 +4,9 @@ ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
 
 #define def_varargs(name, f) \
   template<typename First> \
-  First name(First first) { return first; } \
+  inline First name(First first) { return first; } \
   template<typename First, typename... Rest> \
-  First name(First first, Rest... rest) { return f(first, name(rest...)); }
+  inline First name(First first, Rest... rest) { return f(first, name(rest...)); }
 
 def_varargs(vmin, min);
 def_varargs(vmax, max);
