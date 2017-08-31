@@ -32,3 +32,9 @@ mmin(1, 2, 3, 4, 5);
 mmax(1, 2, 3, 4, 5);
 ```
 
+# Build
+
+```sh
+./build.sh # output to cmacro.cpp
+```
+
