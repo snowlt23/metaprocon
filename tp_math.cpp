@@ -9,5 +9,7 @@ ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
   inline First name(First first, Rest... rest) { return f(first, name(rest...)); }
 
 def_varargs(vmin, min);
+#define min vmin
 def_varargs(vmax, max);
+#define max vmax
 

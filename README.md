@@ -28,8 +28,8 @@ debug_var(a, b, c, d); // L5: a=1 b=2 c=3 e=4
 
 Varargs min max
 ```cpp
-vmin(1, 2, 3, 4, 5);
-vmax(1, 2, 3, 4, 5);
+min(1, 2, 3, 4, 5);
+max(1, 2, 3, 4, 5);
 ```
 
 # Build
