@@ -1,3 +1,3 @@
 
-g++ -Wall -DDEBUG $1.cpp
+g++ -Wall -DDEBUG -std=c++11 $1.cpp
 
