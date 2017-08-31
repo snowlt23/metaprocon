@@ -4,14 +4,6 @@
 
 using namespace std;
 
-string read_file(char* filename) {
-  ifstream file(filename);
-  string res;
-  while (getline(file, res)) {
-
-  }
-}
-
 #define PP_FILE_BEGIN(outname) \
   int main() { \
     ofstream outfile(outname); \
