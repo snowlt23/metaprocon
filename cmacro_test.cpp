@@ -1,6 +1,8 @@
 
 #include "cmacro.cpp"
 
+int arr[10]; iota_array(arr, 10, 1);
+
 int main() {
   rep (i in 5) {
     cout << i << endl;
@@ -18,5 +20,6 @@ int main() {
   int b = 2;
   int c = 3;
   debug_var(a, b, c);
+  rep (i in 10) cout << arr[i];
 }
 
