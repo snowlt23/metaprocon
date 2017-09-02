@@ -17,5 +17,5 @@
 #define down_iter4(i, start, end, down) for (int i = end-1; i >= start; i -= down)
 #define down_iter(...) pp_cat(down_iter, pp_narg(__VA_ARGS__))(__VA_ARGS__)
 #define viter viter_iter ,
-#define viter_iter(i, v) auto tmpitr=v.begin(); for (auto i=*tmpitr; tmpitr != v.end(); tmpitr++)
+#define viter_iter(i, v) for (auto i : v)
 
