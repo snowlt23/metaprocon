@@ -14,7 +14,7 @@ rep (i in N) {...} // normal rep macro
 rep (i in up(1, N+1)) {...} // spec start
 rep (i in up(0, N, 2)) {...} // spec step
 rep (i in down(N)) {...} // down direction loop
-rep (e in viter(v)) {...} // vector element iteration
+rep (e in v) {...} // range based for
 ```
 
 Debug macro
