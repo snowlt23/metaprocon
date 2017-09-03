@@ -16,10 +16,21 @@ int main() {
   rep (i in down(5)) {
     cout << i << endl;
   }
+
+  vector<int> v;
+  v.pb(6);
+  v.pb(7);
+  v.pb(8);
+  v.pb(9);
+  rep (e in v) cout << e << " ";
+  cout << endl;
+
   int a = 1;
   int b = 2;
   int c = 3;
   debug_var(a, b, c);
-  rep (i in 10) cout << arr[i];
+
+  rep (i in 10) cout << arr[i] << " ";
+  cout << endl;
 }
 
