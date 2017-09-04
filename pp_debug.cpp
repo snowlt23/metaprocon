@@ -3,7 +3,7 @@
 #ifdef DEBUG
 #define debug_echo(e) cout << "L" << __LINE__ << ": " << e << endl
 #define debug_var(...) cout << "L" << __LINE__ << ": " pp_foreach(debug_var_elem, __VA_ARGS__) << endl
-#define debug_time2(i, e) auto start ## i = clock(); e; auto end ## i = clock(); cout << (double)(end ## i - start ## i) << "ms" << endl;
+#define debug_time2(i, e) auto start ## i = clock(); e; auto end ## i = clock(); cout << "L" << __LINE__ << ": " << (double)(end ## i - start ## i) << "ms" << endl;
 #define debug_time1(f, i, e) f(i, e)
 #define debug_time(e) debug_time1(debug_time2, __COUNTER__, e)
 #else
