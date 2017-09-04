@@ -1,16 +1,18 @@
 
+template <typename T>
 struct RepIterator {
-  int i;
+  T i;
   RepIterator() : i(0) {}
-  RepIterator(int n) : i(n) {}
+  RepIterator(T n) : i(n) {}
   bool operator ==(const RepIterator& rhs) { return i == rhs.i; }
   bool operator !=(const RepIterator& rhs) { return i != rhs.i; }
-  int operator *() { return i; }
+  T operator *() { return i; }
   RepIterator operator ++() {i++; return *this; };
 };
+template <typename T>
 struct RepLoop {
-  int i;
-  RepLoop(int n) : i(n) {}
+  T i;
+  RepLoop(T n) : i(n) {}
   RepIterator begin() { return RepIterator(); }
   RepIterator end() { return RepIterator(i); }
 };
@@ -21,12 +23,16 @@ struct rep_range {
     return v;
   }
 };
-template <>
-struct rep_range<int> {
-  static RepLoop range(int n) {
-    return RepLoop(n);
-  }
-};
+
+#define def_range(t) \
+  template <> \
+  struct rep_range<int> { \
+    static RepLoop range(int n) { \
+      return RepLoop<int>(n); \
+    } \
+  };
+def_range(int);
+def_range(size_t);
 
 #define rep(...) rep1(rep2, (__VA_ARGS__))
 #define rep1(X, A) X A
@@ -37,12 +43,12 @@ struct rep_range<int> {
 #define rep5(iter, ...) iter(__VA_ARGS__)
 
 #define up up_iter ,
-#define up_iter3(i, start, end) for (int i = start; i < end; i++)
-#define up_iter4(i, start, end, up) for (int i = start; i < end; i += up)
+#define up_iter3(i, start, end) for (auto i = start; i < end; i++)
+#define up_iter4(i, start, end, up) for (auto i = start; i < end; i += up)
 #define up_iter(...) pp_cat(up_iter, pp_narg(__VA_ARGS__))(__VA_ARGS__)
 #define down down_iter ,
-#define down_iter2(i, end) for(int i = end-1; i >= 0; i--)
-#define down_iter3(i, start, end) for (int i = end-1; i >= start; i--)
-#define down_iter4(i, start, end, down) for (int i = end-1; i >= start; i -= down)
+#define down_iter2(i, end) for(auto i = end-1; i >= 0; i--)
+#define down_iter3(i, start, end) for (auto i = end-1; i >= start; i--)
+#define down_iter4(i, start, end, down) for (auto i = end-1; i >= start; i -= down)
 #define down_iter(...) pp_cat(down_iter, pp_narg(__VA_ARGS__))(__VA_ARGS__)
 

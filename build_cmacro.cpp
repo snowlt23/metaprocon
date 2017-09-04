@@ -21,6 +21,7 @@ using namespace std;
 
 PP_FILE_BEGIN("cmacro.cpp")
 
+PP_FILE("pp_start.cpp")
 PP_FILE("pp_basic.cpp")
 PP_FILE("pp_shortnames.cpp")
 PP_FILE("pp_rep.cpp")
@@ -28,5 +29,6 @@ PP_FILE("pp_init.cpp")
 PP_FILE("pp_debug.cpp")
 PP_FILE("pp_unionfind.cpp")
 PP_FILE("tp_math.cpp")
+PP_FILE("pp_end.cpp")
 
 PP_FILE_END()

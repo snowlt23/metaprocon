@@ -1,4 +1,4 @@
 
-g++ -O2 build_cmacro.cpp
+g++ -O2 -oa build_cmacro.cpp
 ./a
 
