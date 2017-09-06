@@ -37,6 +37,6 @@ debug_ary(v);
 # Build
 
 ```sh
-./build.sh # output to cmacro.cpp
+./build_cmacro.sh # output to cmacro.cpp
 ```
 
