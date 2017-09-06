@@ -17,10 +17,7 @@ int main() {
     cout << i << endl;
   }
 
-  vector<int> v;
-  v.pb(6);
-  v.pb(7);
-  v.pb(8);
+  vector<int> v({6, 7, 8});
   v.pb(9);
   rep (e in v) cout << e << " ";
   cout << endl;

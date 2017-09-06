@@ -26,6 +26,14 @@ int d = 4;
 debug_var(a, b, c, d); // L5: a=1 b=2 c=3 e=4
 ```
 
+Debug c-array and container macro
+```cpp
+int arr[] = {5, 6, 7, 8, 9};
+vector<int> v({1, 2, 3, 4});
+debug_ary(arr);
+debug_ary(v);
+```
+
 # Build
 
 ```sh
