@@ -4,17 +4,17 @@ struct RepIterator {
   T i;
   RepIterator() : i(0) {}
   RepIterator(T n) : i(n) {}
-  bool operator ==(const RepIterator& rhs) { return i == rhs.i; }
-  bool operator !=(const RepIterator& rhs) { return i != rhs.i; }
+  bool operator ==(const RepIterator<T>& rhs) { return i == rhs.i; }
+  bool operator !=(const RepIterator<T>& rhs) { return i != rhs.i; }
   T operator *() { return i; }
-  RepIterator operator ++() {i++; return *this; };
+  RepIterator<T> operator ++() {i++; return *this; };
 };
 template <typename T>
 struct RepLoop {
   T i;
   RepLoop(T n) : i(n) {}
-  RepIterator begin() { return RepIterator(); }
-  RepIterator end() { return RepIterator(i); }
+  RepIterator<T> begin() { return RepIterator<T>(); }
+  RepIterator<T> end() { return RepIterator<T>(i); }
 };
 
 template <typename T>
@@ -23,16 +23,18 @@ struct rep_range {
     return v;
   }
 };
-
-#define def_range(t) \
-  template <> \
-  struct rep_range<int> { \
-    static RepLoop range(int n) { \
-      return RepLoop<int>(n); \
-    } \
-  };
-def_range(int);
-def_range(size_t);
+template <>
+struct rep_range<int> {
+  static RepLoop<int> range(int n) {
+    return RepLoop<int>(n);
+  }
+};
+template <>
+struct rep_range<size_t> {
+  static RepLoop<int> range(size_t n) {
+    return RepLoop<int>((int)n);
+  }
+};
 
 #define rep(...) rep1(rep2, (__VA_ARGS__))
 #define rep1(X, A) X A

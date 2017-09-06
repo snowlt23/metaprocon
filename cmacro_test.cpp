@@ -30,7 +30,7 @@ int main() {
   int c = 3;
   debug_var(a, b, c);
 
-  rep (i in 10) cout << arr[i] << " ";
-  cout << endl;
+  debug_ary(arr);
+  debug_ary(v);
 }
 
