@@ -4,6 +4,11 @@ inline int size(T(&)[SZ]) {
   return SZ;
 }
 
+template <typename T, int SZ1, int SZ2>
+inline pair<int, int> size(T(&)[SZ1][SZ2]) {
+  return mp(SZ1, SZ2);
+}
+
 template <typename T, bool>
 struct debug_ary_struct;
 
@@ -20,6 +25,28 @@ struct debug_ary_struct<T, true> {
   }
 };
 
+
+template <typename T, int SZ1, int SZ2>
+void debug_grid_body(int line, T (&grid)[SZ1][SZ2]) {
+  cout << "L" << line << ": grid" << endl;
+  rep (i in SZ1) {
+    rep (j in SZ2) {
+      cout << grid[i][j] << " ";
+    }
+    cout << endl;
+  }
+}
+template <int SZ1, int SZ2>
+void debug_grid_body(int line, int width, int (&grid)[SZ1][SZ2]) {
+  cout << "L" << line << ": grid" << endl;
+  rep (i in SZ1) {
+    rep (j in SZ2) {
+      printf("%*d ", width, grid[i][j]);
+    }
+    cout << endl;
+  }
+}
+
 #define debug_var_elem(v) << #v << "=" << v << " "
 #ifdef DEBUG
 #define debug_echo(e) cout << "L" << __LINE__ << ": " << e << endl
@@ -28,10 +55,14 @@ struct debug_ary_struct<T, true> {
 #define debug_time1(f, i, e) f(i, e)
 #define debug_time(e) debug_time1(debug_time2, __COUNTER__, e)
 #define debug_ary(ary) cout << "L" << __LINE__ << ": " << "{"; debug_ary_struct<decltype(ary), is_array<decltype(ary)>::value>::output(ary); cout << "}" << endl;
+#define debug_grid(grid) debug_grid_body(__LINE__, 1, grid)
+#define debug_gridw(grid, w) debug_grid_body(__LINE__, w, grid)
 #else
 #define debug_echo(e)
 #define debug_var(...)
 #define debug_time(e) e;
 #define debug_ary(ary)
+#define debug_grid(grid)
+#define debug_gridw(grid, w)
 #endif
 

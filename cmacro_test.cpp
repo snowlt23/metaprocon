@@ -2,6 +2,7 @@
 #include "cmacro.cpp"
 
 int arr[10]; iota_array(arr, 10, 1);
+int grid[10][10]; iota_array(grid[0], 10, 1);
 
 int main() {
   rep (i in 5) {
@@ -29,5 +30,7 @@ int main() {
 
   debug_ary(arr);
   debug_ary(v);
+  debug_grid(grid);
+  debug_gridw(grid, 2);
 }
 
