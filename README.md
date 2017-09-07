@@ -23,7 +23,7 @@ int a = 1;
 int b = 2;
 int c = 3;
 int d = 4;
-debug_var(a, b, c, d); // L5: a=1 b=2 c=3 e=4
+debug_var(a, b, c, d); // L5: a=1 b=2 c=3 d=4
 ```
 
 Debug c-array and container macro
